@@ -87,6 +87,27 @@ router.get('/token', pilotRequired, async (req, res, next) => {
     req.user.stripeAccountId = expressAuthorized.stripe_user_id;
     await req.user.save();
 
+    // Trying to disable the automatic payouts in the newly created Stripe Account
+      try {
+        const accountUpdate = await stripe.accounts.update(
+          expressAuthorized.stripe_user_id,
+          {
+            settings: {
+              payouts: {
+                schedule: {
+                  interval: 'manual',
+                },
+              },
+            },
+          }
+          
+          );
+        
+      } catch (err) {
+        console.log('Unable to update manual payout.');
+        next(err);
+      }
+
     // Redirect to the Rocket Rides dashboard
     req.flash('showBanner', 'true');
     res.redirect('/pilots/dashboard');
