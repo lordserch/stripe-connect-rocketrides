@@ -50,33 +50,6 @@ Run the app:
 
 Go to http://localhost:3000 in your browser to start using the app.
 
-## iOS app for passengers
-
-The Rocket Rides iOS app is written in Swift and is built using the [Stripe iOS SDK](https://github.com/stripe/stripe-ios) to accept both card payments and Apple Pay.
-
-<img src="server/public/images/screenshots/rocketrides-ios-ride.png" width="294"><img src="server/public/images/screenshots/rocketrides-ios-location.png" width="294"><img src="server/public/images/screenshots/rocketrides-ios-payment.png" width="294">
-
-### Requirements
-
-This project is written in Swift and requires Xcode 8 to build and run, and [CocoaPods](https://guides.cocoapods.org/using/getting-started.html) to install the dependencies. The app is compatible with iOS 10.0+. You can use it both the iOS Simulator or on your iPhone.
-
-### Getting started
-
-To get started, install the dependencies using CocoaPods:
-
-    cd ios
-    pod install
-
-Open `RocketRides.xcworkspace` (not `RocketRides.xcodeproj`) in Xcode. Build and run the app!
-
-To try out the full payment experience, run the server locally as described above, then follow these steps:
-
-1. Create a new pilot using the Rocket Rides web onboarding.
-2. Fill in the `publishableKey` property in `AppDelegate.swift`. You can find your publishable key in your [Stripe Dashboard](https://dashboard.stripe.com/account/apikeys).
-3. Fill in the `baseURLString` property in `AppDelegate.swift`. This should be `http://localhost:3000` if you haven't modified the server configuration.
-4. Relaunch the app! Tapping on "Payment" and "Price" should now work.
-5. Enter a destination, your payment option, and request a ride! You should see the payment in your Stripe Dashboard.
-
 ## Credits
 
 * Code: [Romain Huet](https://twitter.com/romainhuet), [Joey Dong](https://twitter.com/joeydong_), and [Michael Glukhovsky](https://twitter.com/mglukhovsky)

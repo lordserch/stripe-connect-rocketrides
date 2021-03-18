@@ -3,7 +3,7 @@ extends layout
 block content
   h1.title.short-form
     if step == 'account'
-      | Create your account
+      | Create your account on Colibri
     else if step == 'profile'
       | Complete your profile
   section.form(class={'account': step == 'account', 'profile': step == 'profile'})
@@ -26,10 +26,10 @@ block content
           .pilot-options
             label.pilot-option
               input(type='radio', name='pilot-type', value='individual', id='po-individual', checked=true)
-              span Independent pilot
+              span Sole proprietorship
             label.pilot-option
               input(type='radio', name='pilot-type', value='company', id='po-company')
-              span Company of pilots
+              span Company 
 
           h4.pilot-header#account-info Personal information
           fieldset
@@ -38,7 +38,7 @@ block content
             .row.pilot-info.individual(label='* Last Name')
               input(type='text', name='lastName', placeholder='Diaz')
             .row.pilot-info.company.hidden(label='* Company Name')
-              input(type='text', name='businessName', placeholder='Infinity & Beyond LLC')
+              input(type='text', name='businessName', placeholder='Maximum Tools SAS')
             .row.select(label='Country')
               select(name='country')
                 option(value='AU') Australia
@@ -77,22 +77,22 @@ block content
                 option(value='GB') United Kingdom
                 option(value='US', selected=true) United States
           aside * Indicates required fields
-          h4 Rocket information
+          h4 Category information
           fieldset
-            .row(label='Rocket')
-              input(type='text', name='rocket[model]', placeholder='Lightspeed 3000', value='Lightspeed 3000')
-            .row(label='License')
-              input(type='text', name='rocket[license]', placeholder='FUTURE 7', value='FUTURE 7')
-            .row.select(label='Color')
+            .row(label='Category')
+              input(type='text', name='rocket[model]', placeholder='Gardening', value='Gardening')
+            .row(label='Subcategory')
+              input(type='text', name='rocket[license]', placeholder='Garden hand tools', value='Garden hand tools')
+            .row.select(label='Company Size')
               select(name='rocket[color]')
-                option(value='red') Red
-                option(value='orange') Orange
-                option(value='yellow') Yellow
-                option(value='green') Green
-                option(value='blue', selected) Blue
-                option(value='purple') Purple
-                option(value='black') Black
-                option(value='white') White
+                option(value='red') Very Small
+                option(value='orange') Small
+                option(value='yellow') Medium
+                option(value='green') Large
+                option(value='blue', selected) Corporation
+                option(value='purple') Brand
+                option(value='black') Manufacturer
+                option(value='white') Importer
           h4 Payment information
           .stripe-information
             p We use Stripe to make sure you get paid on time and to keep your personal bank and details secure. Click #[strong Save and continue] to set up your payments on Stripe.
@@ -109,10 +109,10 @@ block footer
 
     case step
       when 'account'
-        p To get started, Rocket Rides will create an account for their pilots on their own backend. The platform can use any kind of authentication here, like email or OAuth. A real product would typically have terms of service and a privacy policy linked here as well.
+        p To get started, Colibri will create an account for their sellers on their own backend. The platform can use any kind of authentication here, like email or OAuth. A real product would typically have terms of service and a privacy policy linked here as well.
 
       when 'profile'
-        p The platform can choose to request additional information from the user before it collects any payments details. Here, Rocket Rides asks a few questions about pilots and their rockets. This information will be stored in the platform’s database.
+        p The platform can choose to request additional information from the user before it collects any payments details. Here, Colibri asks a few questions about sellers and their products. This information will be stored in Colibri's database.
 
       when 'payments'
-        p This platform uses #[a(href='https://stripe.com/connect/account-types') Connect Express] accounts to pay its pilots. We’ll pass some of the user information we have collected to Express in order to make onboarding as simple as possible. This app is in test mode, so no real payments are going through. Use the Stripe test Visa debit card number as a payout method: #[strong 4000 0566 5566 5556]
+        p This test uses #[a(href='https://stripe.com/connect/account-types') Connect Express] accounts to pay its pilots. We’ll pass some of the user information we have collected to Express in order to make onboarding as simple as possible. This app is in test mode, so no real payments are going through. Use the Stripe test Visa debit card number as a payout method: #[strong 4000 0566 5566 5556]

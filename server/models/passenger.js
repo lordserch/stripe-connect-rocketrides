@@ -63,25 +63,34 @@ PassengerSchema.statics.getRandom = async function() {
 PassengerSchema.statics.insertDefaultPassengers = async function() {
   try {
     const data = [{
-      firstName: 'Jenny',
-      lastName: 'Rosen',
-      email: 'jenny.rosen@example.com'
+      firstName: 'Sergio',
+      lastName: 'Rodriguez',
+      email: 'sergio@colibri.com'
     }, {
-      firstName: 'Kathleen',
-      lastName: 'Banks',
-      email: 'kathleen.banks@example.com'
+      firstName: 'Veronika',
+      lastName: 'Lambert',
+      email: 'veronika@colibri.com'
     }, {
-      firstName: 'Victoria',
-      lastName: 'Thompson',
-      email: 'victoria.thompson@example.com'
+      firstName: 'Xavier',
+      lastName: 'Maillot',
+      email: 'xavier@colibri.com'
     }, {
-      firstName: 'Ruth',
-      lastName: 'Hamilton',
-      email: 'ruth.hamilton@example.com'
+      firstName: 'Therese',
+      lastName: 'Chitavong',
+      email: 'therese@colibri.com'
     }, {
-      firstName: 'Emma',
-      lastName: 'Lane',
-      email: 'emma.lane@example.com'
+      firstName: 'Myriam',
+      lastName: 'Bourgeot',
+      email: 'myriam@colibri.com'
+    }, {
+      firstName: 'Olivier',
+      lastName: 'Vaury',
+      email: 'olivier@colibri.com'
+    }, {
+      firstName: 'Sergio',
+      lastName: 'Rodriguez',
+      email: 'sergio@colibri.com'
+    
     }];
     for (let object of data) {
       const passenger = new Passenger(object);

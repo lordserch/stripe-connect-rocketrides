@@ -281,7 +281,7 @@ function getTestSource(behavior) {
   if (behavior === 'immediate_balance') {
     source = 'tok_bypassPending';
   } else if (behavior === 'payout_limit') {
-    source = 'tok_visa_triggerTransferBlock';
+    source = 'tok_bypassPendingInternational';
   }
   return source;
 }

@@ -32,7 +32,7 @@ const PilotSchema = new Schema({
   postalCode: String,
   city: String,
   state: { type: String}, 
-  country: { type: String, default: 'US' },
+  country: { type: String, default: 'FR' },
   created: { type: Date, default: Date.now },
   rocket: {
     model: String,
